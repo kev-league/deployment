@@ -218,3 +218,36 @@ Check your sym-link:
 ```
 ls -lah ../sites-enabled
 ```
+
+Restart your server:
+```
+sudo service nginx restart
+```
+
+## The Internet is Forever: Make Your App Resilient
+Setting node to run forever will make the server restart if an error occurs.
+```
+
+```
+
+## Updates and Upgrades
+If the server prompts you to update or upgrade, go for it!
+```
+sudo apt-get update
+```
+and/or
+```
+sudo apt-get upgrade
+```
+And reboot! (may take a few minutes...)
+```
+sudo reboot
+```
+So secure, brah!
+
+# Add a Subdomain with Portfolio Project
+
+## Create New 'A' Record
+sud
+
+## 
