@@ -277,3 +277,5 @@ server {
 }
 ```
 Root needs to point to where you landing `html` file is. Location needs to be modified if your landing file is not named `index`, which is the default.
+
+From the project directory, run `npm install`. Also from the server project directory (`/srv/kanbangular`), run the forever command.
