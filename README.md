@@ -227,7 +227,7 @@ sudo service nginx restart
 ## The Internet is Forever: Make Your App Resilient
 Setting node to run forever will make the server restart if an error occurs.
 ```
-
+sudo npm i -g forever
 ```
 
 ## Updates and Upgrades
