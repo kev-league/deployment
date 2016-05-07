@@ -219,6 +219,11 @@ Check your sym-link:
 ls -lah ../sites-enabled
 ```
 
+Do you need to remove a sym-link?
+```
+
+```
+
 Restart your server:
 ```
 sudo service nginx restart
@@ -228,6 +233,10 @@ sudo service nginx restart
 Setting node to run forever will make the server restart if an error occurs.
 ```
 sudo npm i -g forever
+```
+Now run it forever:
+```
+PORT=#### forever start server.js
 ```
 
 ## Updates and Upgrades
@@ -245,9 +254,26 @@ sudo reboot
 ```
 So secure, brah!
 
-# Add a Subdomain with Portfolio Project
+# Add a Subdomain and Project
+Let's add your Kanbangular project to your portfolio site.
 
 ## Create New 'A' Record
-sud
+From your DigitalOcean droplet, create an A record. The name is the desired name for your subdomain; the IP address is the same as your main site.
 
-## 
+## Create a New Conf / Update Conf
+On your server, open your `.conf` or create a new one.
+Add the new server configuration for the subdomain:
+```
+server {
+  listen 80;
+  server_name kanbangular.kwhitejr.com;
+  root /srv/kanbangular/public;
+  access_log /var/log/nginx/node-app.access.log;
+  error_log /var/log/nginx/node-app.error.log;
+  location / {
+    try_files $uri $uri/ =404;
+    index login.html;
+  }
+}
+```
+Root needs to point to where you landing `html` file is. Location needs to be modified if your landing file is not named `index`, which is the default.
